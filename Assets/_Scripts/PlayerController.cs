@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour, InputSystem_Actions.IPlayerActions
 {
+    // Variables
     private InputSystem_Actions m_Actions;
     CharacterController cc;
 
@@ -125,10 +126,11 @@ public class PlayerController : MonoBehaviour, InputSystem_Actions.IPlayerAction
     void Start()
     {
         cc = GetComponent<CharacterController>();
-        gravity = Physics.gravity.y;
 
         CalculateJumpVariables();
     }
+
+
 
     // Update is called once per frame
     void FixedUpdate()
@@ -139,17 +141,32 @@ public class PlayerController : MonoBehaviour, InputSystem_Actions.IPlayerAction
         cc.Move(velocity * Time.fixedDeltaTime);
     }
 
+
+
     // Called when the script is loaded or a value is changed in the inspector (Editor only)
     void OnValidate()
     {
         CalculateJumpVariables();
     }
 
+
+
     void CalculateJumpVariables()
     {
+        // Debugging and Logging Statements for Validation for Jump Variables
+        if (timeToJumpApex <= 0f)
+            throw new System.ArgumentOutOfRangeException("timeToJumpApex must be greater than zero.");
+
+        if (jumpHeight <= 0f)
+            throw new System.ArgumentOutOfRangeException("jumpHeight must be greater than zero.");
+
+
+        // Calculate gravity and initial jump velocity based on jump height and time to apex
         gravity = -(2 * jumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         initialJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
     }
+
+
 
     void UpdateCharacterVelocity()
     {

@@ -205,13 +205,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.29095146, y: -0, z: -0, w: 0.9567379}
-  m_LocalPosition: {x: 571.433, y: 215.82, z: 564.5}
+  m_LocalRotation: {x: 0.047158122, y: 0.9440866, z: -0.28710613, w: 0.15506981}
+  m_LocalPosition: {x: 326.3837, y: 136.5059, z: 846.4697}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 33.83, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 33.83, y: 161.344, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,7 +394,7 @@ GameObject:
   - component: {fileID: 587101650}
   - component: {fileID: 587101649}
   m_Layer: 0
-  m_Name: TerrainGroup_0
+  m_Name: TerrainGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -955,13 +955,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734055037}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.009374337, w: 0.9999561}
-  m_LocalPosition: {x: 570.2888, y: 210.41411, z: 576.2456}
+  m_LocalRotation: {x: 0.009250424, y: 0.9867341, z: 0.0015194077, w: 0.16207394}
+  m_LocalPosition: {x: 331.22482, y: 131.1, z: 835.70685}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 161.345, z: 1.074}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,7 +973,7 @@ GameObject:
   - component: {fileID: 832575519}
   - component: {fileID: 832575518}
   m_Layer: 0
-  m_Name: Global Volume
+  m_Name: SkyBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1023,7 +1023,7 @@ GameObject:
   - component: {fileID: 1201531545}
   - component: {fileID: 1201531544}
   m_Layer: 0
-  m_Name: Terrain_0_0_1301415e-0917-4932-8d9f-5e9e1940f380
+  m_Name: MainIsland
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1273,6 +1273,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c576d8d408f014c43aab009c5e98d7ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  jumpHeight: 2
+  timeToJumpApex: 0.4
 --- !u!23 &2022182018
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1337,21 +1339,21 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2022182014}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 573.9, y: 209.14, z: 575.9}
+  m_LocalRotation: {x: -0, y: 0.9867775, z: -0, w: 0.16208106}
+  m_LocalPosition: {x: 327.69305, y: 129.8259, z: 834.87994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 161.345, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 330585546}
+  - {fileID: 2022182020}
+  - {fileID: 734055043}
   - {fileID: 410087041}
   - {fileID: 832575519}
-  - {fileID: 734055043}
-  - {fileID: 1993461097}
   - {fileID: 587101650}
-  - {fileID: 2022182020}
+  - {fileID: 1993461097}

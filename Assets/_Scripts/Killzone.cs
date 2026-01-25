@@ -20,9 +20,12 @@ public class Killzone : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.gameObject.CompareTag("Player"))
+        //Debug.Log("Killzone detected a collision with: " + hit.gameObject.name);
+
+        /*if (hit.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Player has entered the killzone. Respawning...");
             player.transform.position = respawnPoint.position;
-        }
+        }*/
     }
 }

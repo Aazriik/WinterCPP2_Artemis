@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour, InputSystem_Actions.IPlayerAction
     private Vector2 moveInput = Vector2.zero;
     private Vector3 velocity = Vector3.zero;
 
+    [Header("References")]
+    public Transform respawnPoint;                  // Reference to the respawn point Transform
+
 
     #region Input Handling
 
@@ -141,7 +144,17 @@ public class PlayerController : MonoBehaviour, InputSystem_Actions.IPlayerAction
         cc.Move(velocity * Time.fixedDeltaTime);
     }
 
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Debug.Log("Player detected a collision with: " + hit.gameObject.name);
 
+        if (hit.gameObject.CompareTag("Killzone"))
+        {
+            Debug.Log("Player has entered the killzone. Respawning...");
+            // Respawn the player at the respawn point
+            transform.position = respawnPoint.position;
+        }
+    }
 
     // Called when the script is loaded or a value is changed in the inspector (Editor only)
     void OnValidate()

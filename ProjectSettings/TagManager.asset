@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Killzone
+  - Pickup
   layers:
   - Default
   - TransparentFX

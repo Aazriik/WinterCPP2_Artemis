@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4592251503100471656}
   - component: {fileID: 7773805012955814413}
   - component: {fileID: 2778833206616084039}
-  m_Layer: 0
+  - component: {fileID: 7185095848577850434}
+  m_Layer: 3
   m_Name: AmmoPickup
   m_TagString: Pickup
   m_Icon: {fileID: 0}
@@ -46,18 +47,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692c8d96d8410c14f96679a97ac281d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pickup
-  player: {fileID: 0}
+  player: {fileID: 2600675757631920220, guid: e1ff4d27aea0c004ca6a12f0dda98157, type: 3}
   pickupType: 1
   healthAmount: 20
   ammoAmount: 10
   jumpBoostAmount: 2
-  bobHeight: 0.25
+  bobHeight: 0.22
   bobSpeed: 2
   rotationSpeed: 50
   groundLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
-  groundCheckMargin: 0.05
+    m_Bits: 55
 --- !u!135 &2778833206616084039
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -77,8 +77,35 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5655899
+  m_Radius: 0.6
   m_Center: {x: 0, y: 1.412178, z: 0}
+--- !u!54 &7185095848577850434
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6964918895421029346}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: -3, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!1 &6999621489055148339
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,8 +119,7 @@ GameObject:
   - component: {fileID: 2768141959224944633}
   - component: {fileID: 1008052113201097963}
   - component: {fileID: 3432345646522782988}
-  - component: {fileID: 8670302068721298334}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ItemObject
   m_TagString: Pickup
   m_Icon: {fileID: 0}
@@ -359,7 +385,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 653
+  m_VersionIndex: 671
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -446,30 +472,3 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6999621489055148339}
   m_Mesh: {fileID: 0}
---- !u!54 &8670302068721298334
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6999621489055148339}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 0

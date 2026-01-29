@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
         Ray newRay = new Ray(transform.position, transform.forward);
         RaycastHit hitInfo;
 
-        Debug.DrawRay(newRay.origin, newRay.direction * 10.0f, Color.red, 0.1f);
+        //Debug.DrawRay(newRay.origin, newRay.direction * 10.0f, Color.red, 0.1f);
         bool hitSomething = Physics.Raycast(newRay, out hitInfo, 10.0f, stairsLayer);
         if (hitSomething)
         {
@@ -172,7 +172,7 @@ public class PlayerController : MonoBehaviour
                 break;
 
             case "JumpBoost":
-                Debug.Log("Picked up Jump Boost! JumpHeight increased to 4 for 10 seconds!");
+                Debug.Log("Picked up Jump Boost! Jump increased for 10 seconds!");
 
                 // Effect: Increase jump height to 4 for 10 seconds
                 StartCoroutine(JumpBoostEffect(4f, 10f));

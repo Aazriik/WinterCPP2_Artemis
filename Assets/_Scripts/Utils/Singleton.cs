@@ -1,8 +1,7 @@
 using UnityEngine;
 
-
 [DefaultExecutionOrder(-100)]
-public class Singleton<T> : MonoBehaviour where T : Component
+public class Singleton<T>: MonoBehaviour where T : Component
 {
     protected static T _instance;
     public static T Instance
@@ -23,10 +22,10 @@ public class Singleton<T> : MonoBehaviour where T : Component
             return _instance;
         }
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
+
+    private void Awake()
     {
-        if (Instance != null)
+        if (_instance == null)
         {
             _instance = this as T;
             DontDestroyOnLoad(gameObject);

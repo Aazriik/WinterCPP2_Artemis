@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Pickup : MonoBehaviour
@@ -36,16 +35,29 @@ public class Pickup : MonoBehaviour
     void Start()
     {
         //audioSource = GetComponent<AudioSource>();
+        ItemBobbing();
+        ItemRotate();
 
     }
 
     // Update is called once per frame
     void Update()
+    {   
+
+    }
+
+    void ItemBobbing()
     {
-        // Rotate item on Y-Axis, and bob up and down for visual effect
-        transform.Rotate(0, 50 * Time.deltaTime, 0);
+        // Implement bobbing logic if needed
+        // Keep position in the world, but bob up and down.
         float bobHeight = 0.25f;
-        transform.position = new Vector3(transform.position.x, Mathf.Sin(Time.time * 2) * bobHeight + 1, transform.position.z);
+        transform.position = new Vector3(transform.position.x, Mathf.Sin(Time.time * 2) * bobHeight + 1.0f, transform.position.z);
+    }
+
+    void ItemRotate()
+    {
+        // Implement rotation logic if needed
+        transform.Rotate(Vector3.up * Time.deltaTime * 50f);
 
     }
 }

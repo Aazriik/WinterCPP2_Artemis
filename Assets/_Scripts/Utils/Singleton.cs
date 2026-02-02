@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[DefaultExecutionOrder(-100)]
 public class Singleton<T>: MonoBehaviour where T : Component
 {
     protected static T _instance;

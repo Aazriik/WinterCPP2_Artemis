@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     [Header("References")]
     CharacterController cc;                                         // Reference to the CharacterController component
     public Transform respawnPoint;                                  // Reference to the respawn point Transform
+    Animator anim;
 
     private LayerMask stairsLayer;
 
@@ -48,6 +49,7 @@ public class PlayerController : MonoBehaviour
         CalculateJumpVariables();
 
         stairsLayer = LayerMask.GetMask("Stairs");
+        anim = GetComponentInChildren<Animator>();
     }
 
 
